@@ -4,12 +4,18 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
     icon: NextJS,
+  },
+  Astro: {
+    name: "Astro",
+    class: "bg-[#79330B] text-white",
+    icon: AstroIcon,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -19,22 +25,22 @@ const TAGS = {
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Desarrollo de mi Portfolio Web con Astro y Tailwind CSS",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Recientemente, tuve la oportunidad de crear un portfolio web utilizando las tecnologías Astro, Tailwind CSS.",
+    link: "https://bipeers.link/Cpelaez-Portfolio",
+    github: "https://github.com/Cpelaez5/Portfolio.git",
+    image: "/projects/portfolio-snap.webp",
+    tags: [TAGS.Astro, TAGS.TAILWIND],
   },
-  {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+  // {
+  //   title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+  //   description:
+  //     "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+  //   link: "https://adventjs.dev",
+  //   image: "/projects/adventjs.webp",
+  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
+  // },
 ]
 ---
 
