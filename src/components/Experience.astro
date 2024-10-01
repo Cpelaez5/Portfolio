@@ -1,0 +1,45 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Septiembre 2024",
+    title: "Senior Woocommerce - La Brioche Cafe, C.A.",
+    company: "La Brioche Coffe and Market",
+    description:
+      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    link: "https://www.le-petit.briocheve.com/",
+  },
+  {
+    date: "Agosto 2024",
+    title: "Senior Woocommerce - Granos Selectos Guayana, C.A.",
+    company: "Granos Selectos Guayana",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+  {
+    date: "mayo 2024",
+    title: "WhatsApp AI Chatbot developer - La Petit Brioche, C.A.",
+    company: "Le Petit Brioche",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+  {
+    date: "Abril 2021",
+    title: "Junior Woocommerce - Bipeers Venezuela",
+    company: "La Brioche Coffe and Market",
+    description:
+      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    link: "https://bipeers.cloud/",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
