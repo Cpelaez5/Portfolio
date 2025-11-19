@@ -1,10 +1,15 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import AstroIcon from "./icons/AstroIcon.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import VueIcon from "./icons/VueIcon.astro";
+import VuetifyIcon from "./icons/VuetifyIcon.astro";
+import SupabaseIcon from "./icons/SupabaseIcon.astro";
+import FlutterIcon from "./icons/FlutterIcon.astro";
+import FirebaseIcon from "./icons/FirebaseIcon.astro";
 
 const TAGS = {
   NEXT: {
@@ -22,8 +27,51 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  VUE: {
+    name: "Vue.js",
+    class: "bg-[#133727] text-white", // Verde más oscuro, inspirado en el oficial pero con mejor contraste
+    icon: VueIcon,
+  },
+  VUETIFY: {
+    name: "Vuetify",
+    class: "bg-[#0D47A1] text-white", // Azul más oscuro, versión profunda del oficial
+    icon: VuetifyIcon,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-[#174e36] text-white", // Verde lima más oscuro, ajustado para contraste óptimo
+    icon: SupabaseIcon,
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#065bca] text-white", // Azul Flutter más oscuro
+    icon: FlutterIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#c26200] text-white", // Naranja Firebase más oscuro
+    icon: FirebaseIcon,
+  },
+};
 const PROJECTS = [
+  {
+    title: "AD System - Sistema de Administración Fiscal Multi-Inquilino",
+    description:
+      "Desarrollé un sistema full stack para gestión fiscal usando Vue 3, Vuetify y Supabase, enfocado en firmas de contadores.",
+    link: "https://ad-businessgroup.netlify.app/dashboard", // Opcional, si tienes un preview
+    github: "https://github.com/Cpelaez5/ad-system",
+    image: "/projects/ad-system-snap.webp", // Asegúrate de tener esta imagen
+    tags: [TAGS.VUE, TAGS.VUETIFY, TAGS.SUPABASE], // Asumiendo que defines nuevos tags si no existen
+  },
+  {
+    title: "Mi Cantina App - Aplicación Flutter para Cantinas Multiplataforma",
+    description:
+      "Aplicación Flutter multiplataforma para cantinas escolares/empresariales, con carrito de compras, pagos seguros vía QR, roles de usuario (admin/clientes), base de datos en Firebase, notificaciones push, autenticación completa y conversión USD/VES.",
+    link: "https://drive.google.com/drive/folders/1lYcAB6RmisamTudY7L6AFBbw271CvJSA?usp=sharing",
+    github: "https://github.com/Cpelaez5/Flutter-test-app",
+    image: "/projects/mi-cantina-snap.webp", // Agrega esta imagen a tu carpeta public/projects/
+    tags: [TAGS.FLUTTER, TAGS.FIREBASE],
+  },
   {
     title: "Desarrollo de mi Portfolio Web con Astro y Tailwind CSS",
     description:
@@ -41,59 +89,62 @@ const PROJECTS = [
   //   image: "/projects/adventjs.webp",
   //   tags: [TAGS.NEXT, TAGS.TAILWIND],
   // },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="portfolio con Astro y Tailwind CSS" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="portfolio con Astro y Tailwind CSS"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
